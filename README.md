@@ -8,6 +8,7 @@
 - Makefile for gcc and or Mingw (if building for Windows).
 - Unit testing.
 - Pure C++. No mixing of C stdlib headers and functions if possiable.
+- Use as a library or **fork it**!
 - Up to date code standereds.
 - Pointer friendly game engine.
 - Mod support.
