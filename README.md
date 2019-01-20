@@ -7,6 +7,7 @@
 - Clean/organized codebase.
 - Makefile for gcc and or Mingw (if building for Windows).
 - Unit testing.
+- Pure C++. No mixing of C stdlib headers and functions if possiable.
 - Up to date code standereds.
 - Pointer friendly game engine.
 - Mod support.
