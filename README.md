@@ -29,4 +29,4 @@ Once the project is built. You should get a bin folder with the executable. Now 
 
 ## Credits
 
-- Andrew McRobb (ajm113)[https://github.com/ajm113]
+- Andrew McRobb (ajm113)
