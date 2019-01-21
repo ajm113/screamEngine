@@ -1,4 +1,3 @@
-#.SILENT:
 
 # Compile configureation.
 CC=g++
@@ -35,6 +34,7 @@ test:
 	mkdir -p $(TEST_BUILD_DIR)
 	$(CC) $(TEST_BUILD_OBJS) $(BUILD_OBJS) $(TEST_COMPILE_OPTIONS) $(TEST_COMPILE_INCLUDES) -o $(TEST_BUILD_DIR)$(EXECUTABLE)test
 	$(TEST_BUILD_DIR)$(EXECUTABLE)test
+
 .PHONY: clean
 
 clean:

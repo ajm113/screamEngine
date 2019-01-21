@@ -10,7 +10,19 @@ const lest::test specification[] = {
 		scream::ScreamEngine* s = new scream::ScreamEngine();
 
 		EXPECT(s != nullptr);
+
+		// If we know our constructor didn't flop test the defaults.
 		EXPECT(s->GetScreenWidth() == scream::DefaultScreenWidth);
+		EXPECT(s->GetScreenHeight() == scream::DefaultScreenHeight);
+		
+		EXPECT(s->GetPixelWidth() == scream::DefaultPixelWidth);
+		EXPECT(s->GetPixelHeight() == scream::DefaultPixelHeight);
+
+		EXPECT(s->IsFullscreen() == scream::DefaultFullscreen);
+
+		// Once done delete the pointer,
+		delete s;
+		s = nullptr;
 	}
 };
 
