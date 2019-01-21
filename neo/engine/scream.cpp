@@ -77,31 +77,31 @@ int32_t scream::ScreamEngine::GetMouseY() {
 
 // Engine Specific.
 
-uint32_t scream::ScreamEngine::ScreenWidth() {
+uint32_t scream::ScreamEngine::GetScreenWidth() {
 	return m_screenWidth;
 }
 
-uint32_t scream::ScreamEngine::ScreenHeight() {
+uint32_t scream::ScreamEngine::GetScreenHeight() {
 	return m_screenHeight;
 }
 
-uint32_t scream::ScreamEngine::PixelHeight() {
+uint32_t scream::ScreamEngine::GetPixelHeight() {
 	return m_pixelHeight;
 }
 
-uint32_t scream::ScreamEngine::PixelWidth() {
+uint32_t scream::ScreamEngine::GetPixelWidth() {
 	return m_pixelWidth;
 }
 
-std::string scream::ScreamEngine::GameDir() {
+std::string scream::ScreamEngine::GetGameDir() {
 	return m_gameDir;
 }
 
-std::string scream::ScreamEngine::ModDir() {
+std::string scream::ScreamEngine::GetModDir() {
 	return m_modDir;
 }
 
-std::string scream::ScreamEngine::AppName() {
+std::string scream::ScreamEngine::GetAppName() {
 	return m_appName;
 }
 
@@ -115,15 +115,7 @@ bool scream::ScreamEngine::SetVSync(bool enable) {
 	return true;
 }
 
-
-int main() {
-
-	scream::ScreamEngine* engine = new scream::ScreamEngine();
-
-	if(!engine->Initalize()) {
-		return 1;
-	}
+std::atomic<bool> scream::ScreamEngine::m_atomActive { false };
+scream::ScreamEngine* scream::SEX::se = nullptr;
 
 
-	return engine->Start() ? 0 : 1;
-}
