@@ -2,7 +2,7 @@
 
 # Compile configureation.
 CC=g++
-COMPILE_OPTIONS= -D_GLIBCXX_USE_CXX11_ABI=0
+COMPILE_OPTIONS= -Wall -Wextra -std=c++11
 
 # Project specific configuration.
 SRC_DIR=neo/engine/
