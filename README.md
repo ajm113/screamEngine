@@ -7,12 +7,13 @@
 ## What's different vs olcPixelEngine?
 
 - Clean/organized codebase.
+- MIT License (olcPixelEngine uses some sort of sudo GNU license?)
 - Makefile for gcc and or Mingw (if building for Windows).
+  Ability to extend to other GUI frameworks with ease.
 - Unit testing.
 - Pure C++. No mixing of C stdlib headers and functions if possiable.
 - Use as a library or **fork it**!
 - Up to date code standereds.
-- Pointer friendly game engine.
 - Mod support.
 - 100% Unix support.
 - Maybe more...?
