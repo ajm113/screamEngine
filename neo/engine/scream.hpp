@@ -66,26 +66,26 @@ namespace scream {
 		// Hardware Interface states.
 
 		// Determin if the Window is focused or not.
-		const bool IsFocused();
-		const bool IsFullscreen();
-		const bool IsVSync();
+		bool IsFocused();
+		bool IsFullscreen();
+		bool IsVSync();
 
-		const int32_t GetMouseX();
-		const int32_t GetMouseY();
+		int32_t GetMouseX();
+		int32_t GetMouseY();
 
 		// Engine Specific.
 
-		const uint32_t ScreenWidth();
-		const uint32_t ScreenHeight();
-		const uint32_t PixelHeight();
-		const uint32_t PixelWidth();
-		const std::string GameDir();
-		const std::string ModDir();
-		const std::string AppName();
+		uint32_t ScreenWidth();
+		uint32_t ScreenHeight();
+		uint32_t PixelHeight();
+		uint32_t PixelWidth();
+		std::string GameDir();
+		std::string ModDir();
+		std::string AppName();
 
-		const float GetDelta();
+		float GetDelta();
 
-		const bool SetVSync(bool enable = true);
+		bool SetVSync(bool enable = true);
 
 		private:
 		

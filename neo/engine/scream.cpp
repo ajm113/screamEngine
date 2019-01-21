@@ -54,64 +54,64 @@ bool scream::ScreamEngine::OnDraw() {
 }
 
 // Determin if the Window is focused or not.
-const bool scream::ScreamEngine::IsFocused() {
+bool scream::ScreamEngine::IsFocused() {
 	return m_focused;
 }
 
-const bool scream::ScreamEngine::IsFullscreen() {
+bool scream::ScreamEngine::IsFullscreen() {
 	return m_fullscreen;
 }
 
-const bool scream::ScreamEngine::IsVSync() {
+bool scream::ScreamEngine::IsVSync() {
 	return m_vsync;
 }
 
-const int32_t scream::ScreamEngine::GetMouseX() {
+int32_t scream::ScreamEngine::GetMouseX() {
 	return m_mouseX;
 }
 
-const int32_t scream::ScreamEngine::GetMouseY() {
+int32_t scream::ScreamEngine::GetMouseY() {
 	return m_mouseY;
 }
 
 
 // Engine Specific.
 
-const uint32_t scream::ScreamEngine::ScreenWidth() {
+uint32_t scream::ScreamEngine::ScreenWidth() {
 	return m_screenWidth;
 }
 
-const uint32_t scream::ScreamEngine::ScreenHeight() {
+uint32_t scream::ScreamEngine::ScreenHeight() {
 	return m_screenHeight;
 }
 
-const uint32_t scream::ScreamEngine::PixelHeight() {
+uint32_t scream::ScreamEngine::PixelHeight() {
 	return m_pixelHeight;
 }
 
-const uint32_t scream::ScreamEngine::PixelWidth() {
+uint32_t scream::ScreamEngine::PixelWidth() {
 	return m_pixelWidth;
 }
 
-const std::string scream::ScreamEngine::GameDir() {
+std::string scream::ScreamEngine::GameDir() {
 	return m_gameDir;
 }
 
-const std::string scream::ScreamEngine::ModDir() {
+std::string scream::ScreamEngine::ModDir() {
 	return m_modDir;
 }
 
-const std::string scream::ScreamEngine::AppName() {
+std::string scream::ScreamEngine::AppName() {
 	return m_appName;
 }
 
 
-const float scream::ScreamEngine::GetDelta() {
+float scream::ScreamEngine::GetDelta() {
 	return m_delta;
 }
 
 
-const bool scream::ScreamEngine::SetVSync(bool enable) {
+bool scream::ScreamEngine::SetVSync(bool enable) {
 	return true;
 }
 
