@@ -12,6 +12,9 @@ EXECUTABLE=scream
 # Our cpp files we wish to build.
 BUILD_OBJS=$(SRC_DIR)scream.cpp
 
+
+all: build
+
 .PHONY: build
 
 build:
