@@ -75,13 +75,13 @@ namespace scream {
 
 		// Engine Specific.
 
-		uint32_t ScreenWidth();
-		uint32_t ScreenHeight();
-		uint32_t PixelHeight();
-		uint32_t PixelWidth();
-		std::string GameDir();
-		std::string ModDir();
-		std::string AppName();
+		uint32_t GetScreenWidth();
+		uint32_t GetScreenHeight();
+		uint32_t GetPixelHeight();
+		uint32_t GetPixelWidth();
+		std::string GetGameDir();
+		std::string GetModDir();
+		std::string GetAppName();
 
 		float GetDelta();
 
@@ -125,14 +125,11 @@ namespace scream {
 	};
 
 	class SEX {
-		friend class scream::ScreamEngine;
+		friend class ScreamEngine;
 		protected:
 		static ScreamEngine* se;
 	};
 
-	// Create a global instance for any secondary threads or logic needed outside of the scope of our class.
-	std::atomic<bool> ScreamEngine::m_atomActive{ false };
-	scream::ScreamEngine* scream::SEX::se = nullptr;
 }
 
 #endif

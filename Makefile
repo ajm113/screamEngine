@@ -1,8 +1,9 @@
-.SILENT:
+#.SILENT:
 
 # Compile configureation.
 CC=g++
 COMPILE_OPTIONS= -Wall -Wextra -std=c++11
+
 
 # Project specific configuration.
 SRC_DIR=neo/engine/
@@ -11,7 +12,14 @@ EXECUTABLE=scream
 
 # Our cpp files we wish to build.
 BUILD_OBJS=$(SRC_DIR)scream.cpp
+BUILD_OBJS_EXECUTABLE=$(BUILD_OBJS) $(SRC_DIR)main.cpp
 
+# Test Compile configuration
+TEST_DIR=test/
+TEST_COMPILE_INCLUDES= -Ineo/lest/include/lest
+TEST_COMPILE_OPTIONS= -Wall -Wextra -std=c++11
+TEST_BUILD_DIR=$(BUILD_DIR)test/
+TEST_BUILD_OBJS=$(TEST_DIR)scream.cpp
 
 all: build
 
@@ -19,8 +27,14 @@ all: build
 
 build:
 	mkdir -p $(BUILD_DIR)
-	$(CC) $(BUILD_OBJS) $(COMPILE_OPTIONS) -o $(BUILD_DIR)$(EXECUTABLE)
+	$(CC) $(BUILD_OBJS_EXECUTABLE) $(COMPILE_OPTIONS) -o $(BUILD_DIR)$(EXECUTABLE)
 
+.PHONY: test
+
+test:
+	mkdir -p $(TEST_BUILD_DIR)
+	$(CC) $(TEST_BUILD_OBJS) $(BUILD_OBJS) $(TEST_COMPILE_OPTIONS) $(TEST_COMPILE_INCLUDES) -o $(TEST_BUILD_DIR)$(EXECUTABLE)test
+	$(TEST_BUILD_DIR)$(EXECUTABLE)test
 .PHONY: clean
 
 clean:

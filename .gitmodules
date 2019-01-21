@@ -1,0 +1,3 @@
+[submodule "neo/lest"]
+	path = neo/lest
+	url = https://github.com/martinmoene/lest.git
