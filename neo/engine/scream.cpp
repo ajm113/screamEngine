@@ -1,58 +1,5 @@
 #include "scream.hpp"
 
-scream::ScreamEngine::ScreamEngine() {
-	ScreamEngine(
-		scream::DefaultAppName,
-		scream::DefaultScreenWidth, 
-		scream::DefaultScreenHeight, 
-		scream::DefaultPixelWidth, 
-		scream::DefaultPixelHeight,
-		scream::DefaultFullscreen,
-		scream::DefaultGameDir,
-		scream::DefaultModDir
-	);
-
-}
-scream::ScreamEngine::ScreamEngine(
-	std::string appName, 
-	uint32_t screenWidth, 
-	uint32_t screenHeight, 
-	uint32_t pixelWidth, 
-	uint32_t pixelHeight, 
-	bool fullscreen
-) {
-	ScreamEngine(
-		appName,
-		screenWidth, 
-		screenHeight, 
-		pixelWidth, 
-		pixelHeight,
-		fullscreen,
-		scream::DefaultGameDir,
-		scream::DefaultModDir
-	);
-}
-
-scream::ScreamEngine::ScreamEngine(
-	std::string appName,
-	uint32_t screenWidth, 
-	uint32_t screenHeight, 
-	uint32_t pixelWidth, 
-	uint32_t pixelHeight,
-	bool fullscreen,
-	const std::string & gameDir
-) {
-	ScreamEngine(
-		appName,
-		screenWidth, 
-		screenHeight, 
-		pixelWidth, 
-		pixelHeight,
-		fullscreen,
-		gameDir,
-		scream::DefaultModDir
-	);
-}
 
 scream::ScreamEngine::ScreamEngine(
 	std::string appName,

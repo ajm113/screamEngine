@@ -32,33 +32,15 @@ namespace scream {
 
 	class ScreamEngine {
 		public:
-		ScreamEngine();
 		ScreamEngine(
-			std::string appName, 
-			uint32_t screenWidth, 
-			uint32_t screenHeight, 
-			uint32_t pixelWidth, 
-			uint32_t pixelHeight, 
-			bool fullscreen
-		);
-		ScreamEngine(
-			std::string appName,
-			uint32_t screenWidth, 
-			uint32_t screenHeight, 
-			uint32_t pixelWidth, 
-			uint32_t pixelHeight,
-			bool fullscreen,
-			const std::string & gameDir
-		);
-		ScreamEngine(
-			std::string appName,
-			uint32_t screenWidth, 
-			uint32_t screenHeight, 
-			uint32_t pixelWidth, 
-			uint32_t pixelHeight,
-			bool fullscreen,
-			const std::string & gameDir,
-			const std::string & modDir
+			std::string appName = DefaultAppName,
+			uint32_t screenWidth = DefaultScreenWidth,
+			uint32_t screenHeight = DefaultScreenHeight,
+			uint32_t pixelWidth = DefaultPixelWidth,
+			uint32_t pixelHeight = DefaultPixelHeight,
+			bool fullscreen = DefaultFullscreen,
+			const std::string & gameDir = DefaultGameDir,
+			const std::string & modDir = DefaultModDir
 		);
 
 		~ScreamEngine();
