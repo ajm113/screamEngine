@@ -1,6 +1,7 @@
 #include "lest.hpp" // Our testing framework.
-#include "../neo/engine/scream.hpp"
 
+#include "../neo/engine/scream.hpp"
+#include "../neo/engine/logger.hpp"
 
 using namespace std;
 
@@ -23,6 +24,21 @@ const lest::test specification[] = {
 		// Once done delete the pointer,
 		delete s;
 		s = nullptr;
+	},
+
+	CASE("Testing logger.")
+	{
+		scream::Logger* l = new scream::Logger();
+
+		EXPECT(l != nullptr);	
+
+		l->Debug("Debug Message");
+		l->Message("Message Message");
+		l->Warning("Warning message");
+		l->Error("Error message");
+
+		delete l;
+		l = nullptr;
 	}
 };
 

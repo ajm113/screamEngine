@@ -20,17 +20,27 @@ scream::ScreamEngine::ScreamEngine(
 	m_fullscreen = fullscreen;
 	m_gameDir = gameDir;
 	m_modDir = modDir;
+
+	m_logger = new Logger();
+	m_logger->Debug("ScreamEngine starting...");
 }
 
 scream::ScreamEngine::~ScreamEngine() {
+	m_logger->Message("ScreamEngine closing...");
 	OnClear();
+	m_logger->Debug("ScreamEngine successfully closed.");
+
+	delete m_logger;
+	m_logger = nullptr;
 }
 
 bool scream::ScreamEngine::Initalize() {
+	m_logger->Message("ScreamEngine initalized!");
 	return true;
 }
 
 bool scream::ScreamEngine::Start() {
+	m_logger->Debug("Screamengine Start() called.");
 	return true;
 }
 

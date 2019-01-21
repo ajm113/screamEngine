@@ -10,7 +10,9 @@ BUILD_DIR=build/
 EXECUTABLE=scream
 
 # Our cpp files we wish to build.
-BUILD_OBJS=$(SRC_DIR)scream.cpp
+BUILD_OBJS=$(SRC_DIR)scream.cpp \
+	   $(SRC_DIR)logger.cpp
+
 BUILD_OBJS_EXECUTABLE=$(BUILD_OBJS) $(SRC_DIR)main.cpp
 
 # Test Compile configuration

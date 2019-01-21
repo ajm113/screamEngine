@@ -15,6 +15,7 @@
 // typedef int(glSwapInterval_t) (Display *dpy, GLXDrawable drawable, int interval);
 // static glSwapInterval_t *glSwapIntervalEXT;
 
+#include "logger.hpp"
 
 namespace scream {
 
@@ -122,6 +123,8 @@ namespace scream {
 		Window m_window;
 		Window m_windowRoot;
 		XSetWindowAttributes m_setWindowAttribs;
+
+		Logger* m_logger;
 	};
 
 	class SEX {
