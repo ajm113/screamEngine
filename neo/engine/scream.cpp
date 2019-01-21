@@ -21,6 +21,7 @@ scream::ScreamEngine::ScreamEngine(
 	m_gameDir = gameDir;
 	m_modDir = modDir;
 }
+
 scream::ScreamEngine::~ScreamEngine() {
 	OnClear();
 }
