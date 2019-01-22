@@ -1,8 +1,6 @@
 #ifndef SCREAM_HPP
 #define SCREAM_HPP
 
-#include <X11/X.h>		// Used to create our window context.
-#include <X11/Xlib.h>
 #include <chrono>		// Track the FPS/time of our game engine.
 #include <thread>		// Spawning the slave thread for our game.
 #include <atomic>		// Handle thread control of our game engine.
@@ -10,6 +8,10 @@
 #include <functional>
 #include <map>			// Used for key mapping/tracking.
 #include <string>
+
+// Our Window API class.
+#include "sys/x11/window.hpp"
+
 
 // Uncomment me when OpenGL is involved.
 // typedef int(glSwapInterval_t) (Display *dpy, GLXDrawable drawable, int interval);
@@ -44,7 +46,7 @@ namespace scream {
 			const std::string & modDir = DefaultModDir
 		);
 
-		~ScreamEngine();
+		virtual ~ScreamEngine();
 		
 		bool Initalize();
 		bool Start();
@@ -116,14 +118,9 @@ namespace scream {
 		int32_t m_mouseY;
 
 		static std::atomic<bool> m_atomActive;
-
-		// Window specific variables
-
-		Display* m_display;
-		Window m_window;
-		Window m_windowRoot;
-		XSetWindowAttributes m_setWindowAttribs;
-
+		
+		protected:
+		ScreamWindow*	m_window;
 		Logger* m_logger;
 	};
 

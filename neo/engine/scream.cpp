@@ -23,13 +23,20 @@ scream::ScreamEngine::ScreamEngine(
 
 	m_logger = new Logger();
 	m_logger->Debug("ScreamEngine starting...");
+	
+	m_window = new scream::ScreamWindow();
 }
 
 scream::ScreamEngine::~ScreamEngine() {
 	m_logger->Message("ScreamEngine closing...");
-	OnClear();
-	m_logger->Debug("ScreamEngine successfully closed.");
+	m_window->Destroy();
+	
+	delete m_window;
+	m_window =nullptr;
 
+	OnClear();
+
+	m_logger->Debug("ScreamEngine successfully closed.");
 	delete m_logger;
 	m_logger = nullptr;
 }
@@ -41,7 +48,13 @@ bool scream::ScreamEngine::Initalize() {
 
 bool scream::ScreamEngine::Start() {
 	m_logger->Debug("Screamengine Start() called.");
-	return true;
+	
+	return m_window->Create(
+			m_appName, 
+			m_screenWidth*m_pixelWidth,
+			m_screenHeight*m_pixelHeight,
+			m_fullscreen
+		);
 }
 
 // Called on startup after ScreamEngine::Initalize is ran.
@@ -122,7 +135,7 @@ float scream::ScreamEngine::GetDelta() {
 }
 
 
-bool scream::ScreamEngine::SetVSync(bool enable) {
+bool scream::ScreamEngine::SetVSync(bool) {
 	return true;
 }
 
