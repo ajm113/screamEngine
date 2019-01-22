@@ -41,8 +41,15 @@ bool scream::ScreamWindow::Create(const std::string & title, const uint32_t widt
 }
 
 bool scream::ScreamWindow::Destroy() {
-	XDestroyWindow(m_display, m_window);
-	XCloseDisplay(m_display);
+	if(m_display != nullptr && m_window != 0) { 
+		XDestroyWindow(m_display, m_window);
+		m_window = 0;
+	}
+
+	if (m_display != nullptr) {
+		XCloseDisplay(m_display);
+		m_display = nullptr;
+	}
 	return true;
 }
 
