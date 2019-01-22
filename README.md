@@ -1,6 +1,6 @@
 # ScreamEngine
 
-[![Build Status](https://travis-ci.com/ajm113/screamEngine.svg?branch=master)](https://travis-ci.com/ajm113/screamEngine)
+[![Build Status](https://travis-ci.com/ajm113/ScreamEngine.svg?branch=master)](https://travis-ci.com/ajm113/screamEngine)
 
 *Simple 2D Unix game engine based from [olcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine).*
 
